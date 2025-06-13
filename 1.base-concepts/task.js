@@ -2,12 +2,10 @@
 function solveEquation(a, b, c) {
   let arr = [];
   let discr = b**2 - 4*a*c;
-  if (discr < 0){
-    arr = [];
+  if (discr > 0){
+    arr = [(-b + Math.sqrt(discr) )/(2*a), (-b - Math.sqrt(discr) )/(2*a)];
   } else if (discr === 0){
     arr = [-b/(2*a)];
-  } else {
-    arr = [(-b + Math.sqrt(discr) )/(2*a), (-b - Math.sqrt(discr) )/(2*a)];
   }
   return arr;
 }
@@ -15,9 +13,9 @@ function solveEquation(a, b, c) {
 console.log(solveEquation(1, 2, 6));
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  let P = percent/100/12;
-  let telo = amount - contribution;
-  let payMonths = telo * (P + (P / (((1 + P)**countMonths) - 1)));
+  let payPercent = percent/100/12;
+  let restOfAmount = amount - contribution;
+  let payMonths = restOfAmount * (payPercent + (payPercent / (((1 + payPercent)**countMonths) - 1)));
 
 
   return Number((payMonths*countMonths).toFixed(2));
