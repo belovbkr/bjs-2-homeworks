@@ -48,7 +48,7 @@ describe("Домашнее задание к занятию 4 «Объекты»
     let student = new Student("Василиса", "женский", 19);
 
     student.exclude('прогулы');
-    expect(student.excluded).toEqual('прогулы');
+    expect(student.exclude).toEqual('прогулы');
 
     expect(student.subject).toBeUndefined();
     expect(student.marks).toBeUndefined();
@@ -58,7 +58,7 @@ describe("Домашнее задание к занятию 4 «Объекты»
     let student = new Student("Василиса", "женский", 19);
 
     student.exclude('прогулы');
-    expect(student.excluded).toEqual('прогулы');
+    expect(student.exclude).toEqual('прогулы');
 
     student.addMarks(5, 5, 5);
     expect(student.marks).toBeUndefined();
